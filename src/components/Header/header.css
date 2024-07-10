@@ -1,0 +1,116 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 2.4rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 2.4rem 9rem;
+  }
+}
+.header__logo {
+  height: 25px;
+  width: 120px;
+}
+.header__nonmobile-container {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header__nonmobile-container {
+    display: flex;
+    align-items: center;
+    width: 70%;
+  }
+}
+.header__search {
+  min-height: 40px;
+  margin: 1rem 1rem 1rem 0;
+  background-image: url("../../assets/images/search.svg");
+  background-size: 1rem;
+  background-position-x: 0.5rem;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 0 2rem;
+  border: 1px #e1e1e1 solid;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+.header__search::-moz-placeholder {
+  font-family: "AvenirNext";
+  font-weight: 600px;
+  color: #323232;
+}
+.header__search::placeholder {
+  font-family: "AvenirNext";
+  font-weight: 600px;
+  color: #323232;
+}
+.header__search:focus {
+  background-image: none;
+  outline: none;
+  border: 2px solid #0095Ff;
+}
+.header__mobile-container {
+  display: flex;
+  width: 100%;
+}
+.header__avatar {
+  background-image: url(../../assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-position: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .header__avatar {
+    display: none;
+  }
+}
+.header__avatar--nonmobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__avatar--nonmobile {
+    display: flex;
+    margin-left: 1rem;
+  }
+}
+.header__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #FFFFFF;
+  height: 40px;
+  background-size: 1rem;
+  background-position-x: 0.5rem;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-color: #0095Ff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background-image: url("../../assets/images/upload.svg");
+}
+@media (min-width: 768px) {
+  .header__button {
+    width: 15rem;
+    background-size: 10%;
+  }
+}
+.header__button:hover {
+  background-color: #0065AD;
+}/*# sourceMappingURL=header.css.map */

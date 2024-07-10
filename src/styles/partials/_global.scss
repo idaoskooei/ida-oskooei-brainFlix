@@ -1,0 +1,12 @@
+@use './fonts' as *;
+@use './variables' as *;
+
+*, *::before, *::after{
+	box-sizing: border-box;
+}
+body {
+    font-family: 'AvenirNext';
+    font-weight: 400;
+    margin: 0;
+    color: $primary-text-dark;
+}

@@ -1,0 +1,20 @@
+.hero__video-container {
+  width: 100vw;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+}
+.hero__video {
+  width: 100%;
+  background-color: grey;
+}
+@media (min-width: 768px) {
+  .hero__video {
+    width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__video {
+    width: 70%;
+  }
+}/*# sourceMappingURL=Hero.css.map */

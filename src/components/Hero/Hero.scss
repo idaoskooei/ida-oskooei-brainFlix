@@ -1,0 +1,26 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.hero {
+    
+    &__video-container {
+        width: 100vw;
+        background-color: $secondary-dark;
+        display: flex;
+        justify-content: center; 
+    }
+
+    &__video{
+        width: 100%;
+        background-color: grey;
+    
+        @include tablet {
+            width: 80%;
+        }
+        @include desktop {
+            width: 70%;
+        }
+    
+
+    }
+}
