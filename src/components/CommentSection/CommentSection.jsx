@@ -34,4 +34,4 @@ const CommentSection = ({selectedVideo}) => {
     );
 }
 
-export default CommentSection
+export default CommentSection;

@@ -12,22 +12,32 @@ import './App';
 
 function App() {
 
-  const [currentVideoId, setVideoId] = useState(Video[0].id);
-  let selectedVideo = Video.find(e => e.id === currentVideoId);
-
-  return (
-      <>
-          <Header />
-          <Hero selectedVideo={selectedVideo} />
-          <section className='container'>
-              <section className='container__left'>
-                  <HeroContent selectedVideo={selectedVideo} />
-                  <CommentSection selectedVideo={selectedVideo} />
-              </section>
-              <VideoList setVideoId={setVideoId} selectedVideoId={selectedVideo.id} />
-          </section>
-      </>
-  );
-}
-
-export default App;
+    const [currentVideoId, setVideoId] = useState(Video[0].id);
+    let selectedVideo = Video.find(e => e.id === currentVideoId)
+  
+    return (
+    <>
+      <Header /> 
+      <Hero 
+        selectedVideo = {selectedVideo}
+      />
+      <section className='container'>
+        <section className='container__left'>
+          <HeroContent 
+            selectedVideo = {selectedVideo}
+          />
+          <CommentSection 
+            selectedVideo = {selectedVideo}
+          />
+        </section>
+  
+        <VideoList
+          setVideoId = {setVideoId}
+          selectedVideoId = {selectedVideo.id}
+        />
+      </section>
+    </>  
+    );
+  }
+  
+  export default App;
