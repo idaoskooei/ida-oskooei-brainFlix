@@ -3,6 +3,8 @@
 
 .video-list {
     margin: 0 1rem 1rem 1rem;
+    float: right;
+    margin-left: 20px;
 
     @include tablet {
     margin: 0 2rem 1rem 2rem;

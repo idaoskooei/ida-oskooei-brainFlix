@@ -7,8 +7,7 @@ import CommentSection from './components/CommentSection/CommentSection';
 import VideoList from './components/VideoList/VideoList';
 import HeroContent from './components/HeroContent/HeroContent';
 
-
-import './App';
+import './App.scss'
 
 function App() {
 
@@ -30,11 +29,13 @@ function App() {
             selectedVideo = {selectedVideo}
           />
         </section>
-  
-        <VideoList
+
+  <section className ='container_right'>
+  <VideoList
           setVideoId = {setVideoId}
           selectedVideoId = {selectedVideo.id}
         />
+  </section>
       </section>
     </>  
     );

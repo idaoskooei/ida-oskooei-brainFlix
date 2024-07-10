@@ -1,10 +1,11 @@
-@use './mixins' as *;
-@use './variables' as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
 
 .container {
     @include desktop {
         display: flex;
-        justify-content: center;
+        direction: column;
+        // justify-content: center;
         padding: 0rem 7rem;
         margin-top: -4px;
     }
@@ -13,5 +14,8 @@
         @include desktop {
             border-right: 1px solid $secondary-divider;
         }
+    }
+    &__right{
+        width: 100%;
     }
 }
