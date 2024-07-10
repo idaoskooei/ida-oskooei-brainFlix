@@ -4,7 +4,6 @@ import CommentCard from '../CommentCard/CommentCard';
 
 const CommentSection = ({selectedVideo}) => {
 
-
     return (
         <>
             <h3 className='comment-form__title'>3 Comments</h3>

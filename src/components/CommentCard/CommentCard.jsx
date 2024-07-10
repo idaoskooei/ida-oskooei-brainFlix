@@ -3,7 +3,6 @@ import './CommentCard.scss';
 
 const CommentCard = (props) => {
 
-
     return (
         <section className='comment-card'>
             <div className='comment-card__avatar'></div>

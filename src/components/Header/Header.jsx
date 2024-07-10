@@ -4,7 +4,6 @@ import '../Header/Header.scss';
 
 const Header = () => {
 
-
     return (
         <header className='header'>
             <a href='./'><img src={BrainFlixLogo} alt='brainflix logo' className='header__logo'/></a>

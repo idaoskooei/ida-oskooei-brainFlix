@@ -30,13 +30,13 @@ function App() {
           />
         </section>
 
-  <section className ='container_right'>
-  <VideoList
+       <section className ='container_right'>
+         <VideoList
           setVideoId = {setVideoId}
           selectedVideoId = {selectedVideo.id}
         />
-  </section>
-      </section>
+         </section>
+        </section>
     </>  
     );
   }
