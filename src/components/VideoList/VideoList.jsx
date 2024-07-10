@@ -22,4 +22,4 @@ const VideoList = ({setVideoId, selectedVideoId}) => {
     );
 }
 
-export default VideoList
+export default VideoList;

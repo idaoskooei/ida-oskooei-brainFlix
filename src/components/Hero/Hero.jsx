@@ -1,9 +1,7 @@
 import './Hero.scss';
 
-
 const Hero = ({selectedVideo}) => {
 
-    
     return (
         <div className='hero__video-container'>
             <video controls className='hero__video' poster={selectedVideo.image}>
@@ -14,4 +12,4 @@ const Hero = ({selectedVideo}) => {
     );
 }
 
-export default Hero
+export default Hero;

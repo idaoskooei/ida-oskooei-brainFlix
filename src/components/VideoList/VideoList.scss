@@ -3,6 +3,7 @@
 
 .video-list {
     margin: 0 1rem 1rem 1rem;
+
     @include tablet {
     margin: 0 2rem 1rem 2rem;
 
@@ -71,5 +72,11 @@
         }
 
 
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $primary-text-dark;
+        // display: block;
     }
 }
