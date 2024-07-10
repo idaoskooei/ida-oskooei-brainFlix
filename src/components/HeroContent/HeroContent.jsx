@@ -1,11 +1,9 @@
 import './HeroContent.scss';
 
-import viewIcon from '../../assets/Icons/viewIcon';
-import likeIcon from '../../assets/Icons/likeIcon';
+import viewIcon from '../../assets/Icons/views.svg';
+import likeIcon from '../../assets/Icons/likes.svg';
 
 const HeroContent =({selectedVideo}) => {
-
-
   return (
     <section className='hero__content'>
                 <h1 className='hero__title'>{selectedVideo.title}</h1>

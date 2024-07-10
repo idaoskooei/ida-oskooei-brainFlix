@@ -1,5 +1,5 @@
 import './VideoList.scss';
-import VideoData from '../../data/videos.json'
+import VideoData from '../../data/video-details.json'
 
 const VideoList = ({setVideoId, selectedVideoId}) => {
 
