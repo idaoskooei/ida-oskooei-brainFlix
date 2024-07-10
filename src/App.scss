@@ -1,0 +1,20 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
+
+.container {
+    @include desktop {
+        display: flex;
+        direction: column;
+        padding: 0rem 7rem;
+        margin-top: -4px;
+    }
+
+    &__left {
+        @include desktop {
+            border-right: 1px solid $secondary-divider;
+        }
+    }
+    &__right{
+        width: 100%;
+    }
+}
