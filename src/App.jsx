@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Video from './data/video-details.json';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -7,7 +8,7 @@ import VideoList from './components/VideoList/VideoList';
 import HeroContent from './components/HeroContent/HeroContent';
 
 
-import './App.css'
+import './App';
 
 function App() {
 
@@ -29,4 +30,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

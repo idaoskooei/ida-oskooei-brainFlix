@@ -1,0 +1,17 @@
+@use './mixins' as *;
+@use './variables' as *;
+
+.container {
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        padding: 0rem 7rem;
+        margin-top: -4px;
+    }
+
+    &__left {
+        @include desktop {
+            border-right: 1px solid $secondary-divider;
+        }
+    }
+}

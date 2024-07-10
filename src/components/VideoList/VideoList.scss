@@ -1,8 +1,8 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
+
 .video-list {
     margin: 0 1rem 1rem 1rem;
-
     @include tablet {
     margin: 0 2rem 1rem 2rem;
 
