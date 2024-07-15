@@ -1,6 +1,6 @@
 import React from 'react';
 import BrainFlixLogo from '../../assets/Logo/BrainFlix-logo.svg'
-import '../Header/Header.scss';
+import './header.scss';
 
 const Header = () => {
 
