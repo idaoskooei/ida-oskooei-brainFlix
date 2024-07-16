@@ -1,44 +1,26 @@
-import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Video from './data/video-details.json';
 import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import CommentSection from './components/CommentSection/CommentSection';
-import VideoList from './components/VideoList/VideoList';
-import HeroContent from './components/HeroContent/HeroContent';
+import VideoPlayer from './pages/VideoPlayer/VideoPlayer';
+import VideoUpload from './pages/VideoUpload/VideoUpload';
+import  NotFound from './pages/NotFound/NotFound'
 
 import './App.scss'
 
 function App() {
-
-    const [currentVideoId, setVideoId] = useState(Video[0].id);
-    let selectedVideo = Video.find(e => e.id === currentVideoId)
   
-    return (
+  return(
     <>
-      <Header /> 
-      <Hero 
-        selectedVideo = {selectedVideo}
-      />
-      <section className='container'>
-        <section className='container__left'>
-          <HeroContent 
-            selectedVideo = {selectedVideo}
-          />
-          <CommentSection 
-            selectedVideo = {selectedVideo}
-          />
-        </section>
-
-       <section className ='container_right'>
-         <VideoList
-          setVideoId = {setVideoId}
-          selectedVideoId = {selectedVideo.id}
-        />
-         </section>
-        </section>
-    </>  
-    );
-  }
-  
+    <BrowserRouter>
+    <Header /> 
+<Routes>
+<Route path="/" element= {<VideoPlayer/>}></Route>
+<Route path="/video/:videoId" element= {<VideoPlayer/>} > </Route>
+<Route path="/upload" element={<VideoUpload />}></Route>
+<Route path='*' element={<NotFound />}></Route>
+</Routes>
+    </BrowserRouter>
+ </>  
+  );
+}
   export default App;
