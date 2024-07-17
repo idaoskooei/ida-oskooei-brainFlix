@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import '../../pages/VideoUpload/VideoUpload.scss'
 
 const VideoUpload = () => {
     let navigate = useNavigate();

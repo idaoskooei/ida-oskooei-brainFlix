@@ -92,9 +92,7 @@
     }
 
     &__button {
+        background-image: url('../../assets/Icons/upload.svg');
         @include default-button;
-        background-image: url('../../assets/Images/Upload-video-preview.jpg');
     }
-
-
 }
