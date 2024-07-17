@@ -11,8 +11,8 @@ const Header = () => {
             <div className='header__nonmobile-container'>
                 <div className='header__mobile-container'>
                     <div className='header__search-container'>
-                        <input type='text' placeholder='Search' className='header__search'/>
                         <span className='header__search-icon'></span>
+                        <input type='text' placeholder='Search' className='header__search'/>
                     </div>
                     <div className='header__avatar'></div>
                 </div>
