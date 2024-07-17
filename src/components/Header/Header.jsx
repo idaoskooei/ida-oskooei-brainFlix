@@ -1,10 +1,8 @@
 import './header.scss';
-import BrainFlixLogo from '../../assets/Logo/BrainFlix-logo.svg'
+import BrainFlixLogo from '../../assets/Logo/BrainFlix-logo.svg';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-
-
     return (
         <header className='header'>
             <Link to="/">
@@ -12,11 +10,14 @@ const Header = () => {
             </Link>
             <div className='header__nonmobile-container'>
                 <div className='header__mobile-container'>
-                    <input type='text' placeholder='Search' className='header__search'/>
+                    <div className='header__search-container'>
+                        <input type='text' placeholder='Search' className='header__search'/>
+                        <span className='header__search-icon'></span>
+                    </div>
                     <div className='header__avatar'></div>
                 </div>
-                <button  className='header__button'>
-                    <Link to="/upload"  className='link'>UPLOAD</Link>
+                <button className='header__button'>
+                    <Link to="/upload" className='header__button-link'>UPLOAD</Link>
                 </button>
                 <div className='header__avatar header__avatar--nonmobile'></div>
             </div>
