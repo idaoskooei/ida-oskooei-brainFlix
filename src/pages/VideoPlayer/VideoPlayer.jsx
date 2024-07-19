@@ -7,47 +7,50 @@ import CommentSection from "../../components/CommentSection/CommentSection";
 import VideoList from "../../components/VideoList/VideoList";
 import HeroContent from "../../components/HeroContent/HeroContent";
 
+const baseURL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+const apiKey = "eb0a0738-fbb2-4a75-a000-e9a8cd7e2827";
+
 const VideoPlayer = () => {
-    const { videoId } = useParams();
-    const [videoArray, setVideoArray] = useState([]);
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    const [defaultVideoId, setDefaultVideoId] = useState('25ce5d91-a262-4dcf-bb87-42b87546bcfa');
+    const {videoId} = useParams()
+
+    const [videoArray, setVideoArray] = useState();
+    const [selectedVideo, setSelectedVideo] = useState();
 
     useEffect(() => {
-        axios.get("https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=eb0a0738-fbb2-4a75-a000-e9a8cd7e2827")
-            .then(response => {
-                setVideoArray(response.data);
-                if (!videoId) {
-                    const defaultVideo = response.data.find(video => video.id === defaultVideoId);
-                    setSelectedVideo(defaultVideo);
-                }
-            })
-            .catch(error => console.log(error));
-    }, [videoId, defaultVideoId]);
-
+        axios.get(`${baseURL}/videos?api_key=${apiKey}`)
+        .then(response =>  setVideoArray(response.data))
+        .catch(error=> console.log(error))
+    }, [])
+ 
     useEffect(() => {
-        if (videoId) {
-            axios.get(`https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}?api_key=eb0a0738-fbb2-4a75-a000-e9a8cd7e2827`)
-                .then(response => setSelectedVideo(response.data))
-                .catch(error => console.log(error));
+
+        if(videoId) {
+            axios.get(`${baseURL}/videos/${videoId}?api_key=${apiKey}`)
+            .then(response => setSelectedVideo(response.data))
+            .catch(error=> console.log(error))
+        } else {
+            axios.get(`${baseURL}/videos/b6f35f03-7936-409b-bd2a-446bcc5f30e7?api_key=${apiKey}`)
+            .then(response => setSelectedVideo(response.data))
+            .catch(error=> console.log(error))
         }
-    }, [videoId]);
+        
+    },[videoId])
 
     return (
         <>
-            <Hero selectedVideo={selectedVideo} />
-            <section className="container">
-                <section className="container__left">
-                    <HeroContent selectedVideo={selectedVideo} />
-                    <CommentSection selectedVideo={selectedVideo} />
+            <Hero selectedVideo = {selectedVideo}/>
+            <section className='container'>
+                <section className='container__left'>
+                <HeroContent  selectedVideo = {selectedVideo}/>
+                <CommentSection selectedVideo = {selectedVideo} />
                 </section>
                 <VideoList
-                    videoArray={videoArray}
-                    selectedVideo={selectedVideo}
+                    videoArray = {videoArray}
+                    selectedVideo = {selectedVideo}
                 />
             </section>
         </>
-    );
+      )
 }
 
 export default VideoPlayer;
