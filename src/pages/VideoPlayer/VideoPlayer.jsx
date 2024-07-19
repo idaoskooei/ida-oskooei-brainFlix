@@ -17,13 +17,19 @@ const VideoPlayer = () => {
     const [selectedVideo, setSelectedVideo] = useState();
 
     useEffect(() => {
-        axios.get(`${baseURL}/videos?api_key=${apiKey}`)
-        .then(response =>  setVideoArray(response.data))
-        .catch(error=> console.log(error))
+        const fetchVideos = async () => {
+            try {
+                const response =  await axios.get(`${baseURL}/videos?api_key=${apiKey}`);
+                setVideoArray(response.data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchVideos();
     }, [])
  
     useEffect(() => {
-
         if(videoId) {
             axios.get(`${baseURL}/videos/${videoId}?api_key=${apiKey}`)
             .then(response => setSelectedVideo(response.data))
