@@ -118,7 +118,7 @@
     }
 
     &__button {
+        background-image: url('../../assets/Icons/add_comment.svg');
         @include default-button;
-        background-image: url(../../assets/Icons/add_comment.svg);
     }
 }

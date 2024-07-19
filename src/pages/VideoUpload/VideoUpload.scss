@@ -168,9 +168,9 @@
     }
 
     &__button {
-        @include default-button;
         background-image: url('../../assets/Icons/publish.svg');
         margin-bottom: 2rem;
+        @include default-button;
         @include tablet {
             width: 10rem;
         }
