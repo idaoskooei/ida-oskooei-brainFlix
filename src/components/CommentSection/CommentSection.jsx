@@ -1,13 +1,14 @@
 import './CommentSection.scss';
 import CommentCard from '../CommentCard/CommentCard';
 
-const CommentSection = ({ selectedVideo }) => {
 
-    const currentVideoComments = selectedVideo?.comments || [];
+const CommentSection = ({selectedVideo}) => {
+
+    let currentVideoComments = selectedVideo?.comments;
 
     return (
         <>
-            <h3 className='comment-form__title'>{currentVideoComments.length} Comments</h3>
+            <h3 className='comment-form__title'>3 Comments</h3>
             <section className='comment-form'>
                 <div className='comment-form__avatar'></div>
                 <form className='comment-form__form'>
@@ -15,25 +16,26 @@ const CommentSection = ({ selectedVideo }) => {
                     <div className='comment-form__nonmobile-container'>
                         <textarea id='newComment' className='comment-form__input' placeholder='Add a new comment'></textarea>
                         <button 
-                            className='comment-form__button'
-                            onClick={(event)=>event.preventDefault()}
+                        className='comment-form__button'
+                        onClick={(event)=>event.preventDefault()}
                         >COMMENT</button>
                     </div>
                 </form>
             </section>
 
             <section className='comment-section'>
-                {currentVideoComments.map((comment) => (
-                    <CommentCard
-                        key={comment.id}
-                        commentComment={comment.comment}
-                        commentName={comment.name}
-                        commentTimestamp={comment.timestamp}
+                {currentVideoComments?.map((comment) => 
+                    <CommentCard        
+                        key = {comment.id} 
+                        commentComment = {comment.comment}
+                        commentName = {comment.name}
+                        commentTimestamp = {comment.timestamp}
                     />
-                ))}
+                )}
+                
             </section>
         </>
     );
 }
 
-export default CommentSection;
+export default CommentSection

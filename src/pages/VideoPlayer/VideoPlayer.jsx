@@ -11,13 +11,12 @@ const VideoPlayer = () => {
     const { videoId } = useParams();
     const [videoArray, setVideoArray] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
-    const [defaultVideoId, setDefaultVideoId] = useState('25ce5d91-a262-4dcf-bb87-42b87546bcfa'); // Default video ID
+    const [defaultVideoId, setDefaultVideoId] = useState('25ce5d91-a262-4dcf-bb87-42b87546bcfa');
 
     useEffect(() => {
         axios.get("https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=eb0a0738-fbb2-4a75-a000-e9a8cd7e2827")
             .then(response => {
                 setVideoArray(response.data);
-                // Set the selected video if videoId is not defined
                 if (!videoId) {
                     const defaultVideo = response.data.find(video => video.id === defaultVideoId);
                     setSelectedVideo(defaultVideo);
