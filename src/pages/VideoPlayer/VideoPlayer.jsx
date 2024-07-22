@@ -22,7 +22,7 @@ const VideoPlayer = () => {
                 setVideoArray(response.data);
 
                 if (!videoId && response.data.length > 0) {
-                    const defaultVideoId = response.data[3].id;
+                    const defaultVideoId = response.data[0].id;
                     fetchVideoById(defaultVideoId);
                 }
             } catch (error) {
