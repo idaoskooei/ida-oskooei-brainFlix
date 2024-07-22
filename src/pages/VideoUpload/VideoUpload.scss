@@ -1,0 +1,187 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/fonts' ;
+
+
+
+.upload {
+    padding: 1rem;
+    border-top: 1px $secondary-divider solid;
+    @include desktop {
+        padding: 1rem 8rem;
+    }
+
+    
+    &__title {
+        margin-top: 0;
+        font-weight: 600;
+        @include tablet {
+            border-bottom: 1px $secondary-divider solid;
+            padding: 1.3rem 2rem 2.3rem 0rem;
+            margin: 0 1rem 1rem 1rem;
+            font-size: 2.0625rem;
+            line-height: 2.0625rem;
+        }
+    }
+
+    &__thumbnail {
+        background-image: url('../../assets/Images/Upload-video-preview.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 10rem;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        @include tablet {
+            // margin: 0.5rem 1rem 1rem 1rem;
+            width: 48%;
+            height: 12rem;
+        }
+        @include desktop {
+            width: 100%;
+            
+        }
+    }
+
+    &__label {
+        color: $primary-text-label;
+        font-weight: 600;
+        font-size: .875rem;
+        margin-bottom: 0.5rem;
+        @include tablet {
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    @include tablet {
+        margin: 1rem;
+    }
+    
+    &__container-desktop {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__left-container {
+        @include desktop {
+            width: 33%;
+            margin-right: 1rem;
+        }
+    }
+
+    &__right-container {
+        @include desktop {
+            width: 64%;
+            margin-top: .875rem;
+        }
+    }
+
+    &__label {
+        color: $primary-text-label;
+        font-weight: 600;
+        font-size: .875rem;
+        margin-bottom: 0.5rem;
+        @include tablet {
+            display: block;
+            font-size: .75rem;
+        }
+
+    }
+
+    &__input {
+        min-height: 40px;
+        background-size: 1rem;
+        background-position-x: 0.5rem;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px $secondary-divider solid;
+        border-radius: 4px;
+        background-color: $secondary-background;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            padding-left: 1rem;
+        }
+
+        @include desktop {
+            margin-bottom: 2.5rem;
+        }
+
+        &::placeholder {
+            font-family: 'AvenirNext';
+            font-weight: 600px;
+            color: $primary-text-dark;
+        }
+
+        &:focus {
+            background-image: none;
+            outline: none;
+            border: 2px solid $primary-cta;
+        }
+
+    }
+
+    &__textarea {
+        border: 1px $secondary-divider solid;
+        border-radius: 4px;
+        padding: 1rem;
+        background-color: $secondary-background;
+        resize: none;
+        margin-bottom: 1rem;
+        height: 7rem;
+        width: 100%;
+        @include tablet {
+            height: 5.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &::placeholder {
+            font-family: 'AvenirNext';
+            font-weight: 600px;
+            color: $primary-text-dark;
+        }
+
+        &:focus {
+            outline: none;
+            border: 2px solid $primary-cta;
+        }
+    }
+    &__nonmobile-container {
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            border-top: 1px $secondary-divider solid;
+            padding-top: 1.5rem
+        }
+        @include desktop {
+            margin-top: 1rem;
+        }
+    }
+
+    &__button {
+        background-image: url('../../assets/Icons/publish.svg');
+        margin-bottom: 2rem;
+        @include default-button;
+        @include tablet {
+            width: 10rem;
+        }
+
+        &--cancel {
+            color: $primary-cta;
+            background-color: $primary-background;
+            background-image: none;
+            @include tablet {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
