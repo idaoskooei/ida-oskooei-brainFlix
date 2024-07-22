@@ -49,21 +49,20 @@
         }
     }
 
-    &__avatar {
-        background-image: url(../../assets/images/Mohan-muruge.jpg);
+    .comment-form__avatar {
+        background-image: url('../../assets/Images/Mohan-muruge.jpg');
         background-size: cover;
         background-position: center;
         min-width: 36px;
         height: 36px;
         border-radius: 50%;
-        margin: 1rem 0;
-
+        margin: 1rem 0;    
         @include tablet {
             min-width: 40px;
             height: 40px;
-                
         }
     }
+    
     &__form {
         width: 100%;
         margin-left: 1rem;
