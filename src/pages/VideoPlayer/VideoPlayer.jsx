@@ -6,6 +6,7 @@ import Hero from "../../components/Hero/Hero";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import VideoList from "../../components/VideoList/VideoList";
 import HeroContent from "../../components/HeroContent/HeroContent";
+import NotFound from "../../components/NotFound/NotFound";
 
 const baseURL = "http://localhost:3000";
 
@@ -14,6 +15,7 @@ const VideoPlayer = () => {
     const navigate = useNavigate();
     const [videoArray, setVideoArray] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [isNotFound, setIsNotFound] = useState(false);
 
     useEffect(() => {
         const fetchVideos = async () => {
@@ -34,8 +36,14 @@ const VideoPlayer = () => {
         try {
             const response = await axios.get(`${baseURL}/videos/${id}`);
             setSelectedVideo(response.data);
+            setIsNotFound(false); 
         } catch (error) {
-            console.error("Error fetching video:", error);
+            if (error.response && error.response.status === 404) {
+                setIsNotFound(true); 
+                setSelectedVideo(null);
+            } else {
+                console.error("Error fetching video:", error);
+            }
         }
     };
 
@@ -44,6 +52,10 @@ const VideoPlayer = () => {
             fetchVideoById(videoId);
         }
     }, [videoId]);
+
+    if (isNotFound) {
+        return <NotFound />; 
+    }
 
     return (
         <>
