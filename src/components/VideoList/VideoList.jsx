@@ -1,28 +1,29 @@
-import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 import './VideoList.scss';
 
-const VideoList = ({videoArray, selectedVideo}) => {
-
+const VideoList = ({ videoArray, selectedVideo }) => {
     return (
         <section className='video-list'>
             <h2 className='video-list__title'>NEXT VIDEOS</h2>
-            {videoArray?.filter(video=> video.id != selectedVideo?.id).map((e) =>
-            <Link
-            to={`/video/${e.id}`} 
-            className="video-card__link"
-            key={e.id}
-            >
-                <section className='video-card'>
-                <div style={{backgroundImage: `url(${e.image})`}} className='video-card__img'></div>
-                <div className='video-card__text'>
-                                <p className='video-card__title'>{e.title}</p>
-                                <p className='video-card__channel'>{e.channel}</p>
-                            </div>
-                </section>  
-            </Link>
-)}
-         </section>
+            {videoArray?.filter(video => video.id !== selectedVideo?.id).map((video) => (
+                <Link
+                    to={`/video/${video.id}`} 
+                    className="video-card__link"
+                    key={video.id}
+                >
+                    <section className='video-card'>
+                        <div 
+                            style={{ backgroundImage: `url(${video.image})` }} 
+                            className='video-card__img'
+                        ></div>
+                        <div className='video-card__text'>
+                            <p className='video-card__title'>{video.title}</p>
+                            <p className='video-card__channel'>{video.channel}</p>
+                        </div>
+                    </section>  
+                </Link>
+            ))}
+        </section>
     );
 }
 
