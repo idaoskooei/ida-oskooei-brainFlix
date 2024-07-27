@@ -22,11 +22,11 @@ const HeroContent =({selectedVideo}) => {
                       </div>
                       <div className='hero__container'>
                           <div className='hero__container-icon'>
-                              <img src={viewIcon} className="hero__view-icon"></img>
+                              <img src={viewIcon} className="hero__view-icon" alt="View icon representing visibility or viewing"></img>
                               <p className='hero__view'>{selectedVideo?.views}</p>
                           </div>
                           <div className='hero__container-icon'>
-                              <img src={likeIcon} className="hero__like-icon"></img>
+                              <img src={likeIcon} className="hero__like-icon" alt="like icon representing visibility or viewing"></img>
                               <p className='hero__like'>{selectedVideo?.likes}</p>
                           </div>
                       </div>
