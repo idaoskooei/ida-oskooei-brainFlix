@@ -3,8 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import VideoPlayer from './pages/VideoPlayer/VideoPlayer';
 import VideoUpload from './pages/VideoUpload/VideoUpload';
-import  NotFound from './pages/NotFound/NotFound'
-
+import NotFound from './components/NotFound/NotFound';
 import './App.scss'
 
 function App() {
