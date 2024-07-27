@@ -22,6 +22,7 @@ const VideoPlayer = () => {
             try {
                 const response = await axios.get(`${baseURL}/videos`);
                 setVideoArray(response.data);
+
                 if (!videoId && response.data.length > 0) {
                     navigate(`/video/${response.data[0].id}`);
                 }
@@ -29,32 +30,33 @@ const VideoPlayer = () => {
                 console.error("Error fetching videos:", error);
             }
         };
-        fetchVideos();
-    }, [videoId, navigate]);
 
-    const fetchVideoById = async (id) => {
-        try {
-            const response = await axios.get(`${baseURL}/videos/${id}`);
-            setSelectedVideo(response.data);
-            setIsNotFound(false); 
-        } catch (error) {
-            if (error.response && error.response.status === 404) {
-                setIsNotFound(true); 
-                setSelectedVideo(null);
-            } else {
-                console.error("Error fetching video:", error);
-            }
-        }
-    };
+        fetchVideos();
+    }, [navigate, videoId]);
 
     useEffect(() => {
+        const fetchVideoById = async (id) => {
+            try {
+                const response = await axios.get(`${baseURL}/videos/${id}`);
+                setSelectedVideo(response.data);
+                setIsNotFound(false);
+            } catch (error) {
+                if (error.response && error.response.status === 404) {
+                    setIsNotFound(true);
+                    setSelectedVideo(null);
+                } else {
+                    console.error("Error fetching video:", error);
+                }
+            }
+        };
+
         if (videoId) {
             fetchVideoById(videoId);
         }
     }, [videoId]);
 
     if (isNotFound) {
-        return <NotFound />; 
+        return <NotFound />;
     }
 
     return (
